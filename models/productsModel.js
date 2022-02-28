@@ -38,8 +38,22 @@ const add = async (name, quantity) => {
   };
 };
 
+const update = async (id, name, quantity) => {
+  const productExist = await getById(id);
+
+  if (!productExist) return false;
+
+  await connection.execute(
+    'UPDATE products SET name=?, quantity=? WHERE id=?',
+    [name, quantity, id],
+  );
+
+  return { id, name, quantity };
+};
+
 module.exports = {
   getAll,
   getById,
   add,
+  update,
 };
