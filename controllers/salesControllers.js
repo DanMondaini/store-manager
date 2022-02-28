@@ -16,11 +16,11 @@ const getById = async (req, res, next) => {
 
     if (!id) return res.status(400).json({ message: 'Invalid id.' });
 
-    const sale = await salesServices.getById(id);
+    const sales = await salesServices.getById(id);
 
-    if (sale.length === 0) return res.statu(404).json({ message: 'Sale not found' });
+    if (sales.length === 0) return res.status(404).json({ message: 'Sale not found' });
 
-    return res.status(200).json(sale);
+    return res.status(200).json(sales);
   } catch (err) {
     next(err);
   }

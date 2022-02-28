@@ -1,10 +1,13 @@
 require('dotenv').config();
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
 
 const productsRoutes = require('./routes/products.routes');
 const salesRoutes = require('./routes/sales.routes');
+
+app.use(bodyParser.json());
 
 // não remova esse endpoint, e para o avaliador funcionar
 app.get('/', (_request, response) => {
