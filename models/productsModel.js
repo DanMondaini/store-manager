@@ -8,6 +8,14 @@ const getAll = async () => {
   return result;
 };
 
+const getById = async (id) => {
+  const [product] = await connection.execute('SELECT * FROM products WHERE id=?;',
+  [id]);
+
+  return product;
+};
+
 module.exports = {
   getAll,
+  getById,
 };
