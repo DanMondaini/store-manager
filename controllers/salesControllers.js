@@ -26,7 +26,33 @@ const getById = async (req, res, next) => {
   }
 };
 
+const add = async (req, res, next) => {
+  try {
+    const recivedSales = req.body;
+    const sales = await salesServices.add(recivedSales);
+
+    return res.status(201).json(sales);
+  } catch (err) {
+    next(err);
+  }
+};
+
+const update = async (req, res, next) => {
+  try {
+    const recivedSales = req.body;
+    const { id } = req.params;
+
+    const sales = await salesServices.update(id, recivedSales);
+
+    return res.status(200).json(sales);
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   getAll,
   getById,
+  add,
+  update,
 };
