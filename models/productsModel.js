@@ -51,9 +51,20 @@ const update = async (id, name, quantity) => {
   return { id, name, quantity };
 };
 
+const exclude = async (id) => {
+  const productExist = await getById(id);
+
+  if (!productExist) return false;
+
+  const product = await connection.execute('DELETE FROM products WHERE id=?', [id]);
+
+  return product;
+};
+
 module.exports = {
   getAll,
   getById,
   add,
   update,
+  exclude,
 };
