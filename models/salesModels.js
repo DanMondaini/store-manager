@@ -20,18 +20,18 @@ const serialize = (salesData) => salesData.map((sale) => {
 });
 
 const getAll = async () => {
-const [sales] = await connection.execute(`
+  const [sales] = await connection.execute(`
     SELECT
         sapr.sale_id,
         sapr.product_id,
         sapr.quantity,
         sa.date
-    FROM sales_products as sapr
-    INNER JOIN sales as sa
+    FROM StoreManager.sales_products as sapr
+    INNER JOIN StoreManager.sales as sa
     ON sa.id = sapr.sale_id
     ORDER BY sapr.sale_id, sapr.product_id;`);
-  
-    return serialize(sales);
+
+  return serialize(sales);
 };
 
 const getById = async (id) => {
@@ -40,8 +40,8 @@ const getById = async (id) => {
     sapr.product_id,
     sapr.quantity,
     sa.date
-  FROM sales_products as sapr
-  INNER JOIN  sales as sa
+  FROM StoreManager.sales_products as sapr
+  INNER JOIN StoreManager.sales as sa
   ON sapr.sale_id = ? AND sapr.sale_id = sa.id
   ORDER BY sapr.sale_id, sapr.product_id;`, [id]);
 

@@ -13,7 +13,7 @@ const getById = async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    if (!id) return res.status(400).json({ message: 'Inválid id.' });
+    if (!id) return res.status(400).json({ message: 'Invalid id.' });
 
     const product = await productsServices.getById(id);
 
@@ -54,6 +54,7 @@ const update = async (req, res, next) => {
     next(err);
   }
 };
+
 const exclude = async (req, res, next) => {
   try {
     const { id } = req.params;

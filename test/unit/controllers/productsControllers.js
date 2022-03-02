@@ -2,7 +2,7 @@ const sinon = require('sinon');
 const { expect } = require('chai');
 
 const productsServices = require('../../../services/productsServices');
-const productsControllers = require('../../../controllers/productsControllers');
+const productsControllers = require('../../../controllers/produtcsControllers');
 describe('Quando a função getAll do controller for chamada', () => {
   const request = {};
   const response = {};

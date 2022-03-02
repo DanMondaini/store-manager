@@ -1,31 +1,31 @@
-const productsModel = require('../models/productsModels');
+const productsModels = require('../models/productsModels');
 
 const getAll = async () => {
-  const result = await productsModel.getAll();
+  const products = await productsModels.getAll();
 
-  return result;
+  return products;
 };
 
 const getById = async (id) => {
-  const product = await productsModel.getById(id);
+  const product = await productsModels.getById(id);
 
   return product;
 };
 
 const add = async (name, quantity) => {
-  const product = await productsModel.add(name, quantity);
+  const product = await productsModels.add(name, quantity);
 
   return product;
 };
 
 const update = async (id, name, quantity) => {
-  const product = await productsModel.update(id, name, quantity);
+  const product = await productsModels.update(id, name, quantity);
 
   return product;
 };
 
 const exclude = async (id) => {
-  const product = await productsModel.exclude(id);
+  const product = await productsModels.exclude(id);
 
   return product;
 };
