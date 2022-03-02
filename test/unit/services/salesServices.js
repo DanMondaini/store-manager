@@ -105,3 +105,5 @@ describe('Sales', () => {
     });
   });
 });
+
+// A implementação dos teste foi feita com consulta ao repositório do Erickson Siqueira: https://github.com/tryber/sd-015-b-store-manager/pull/10/commits/ef25dbfe6c12e2fee0fc6c43445bfaa1d6203551
