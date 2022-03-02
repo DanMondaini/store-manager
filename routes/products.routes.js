@@ -14,8 +14,6 @@ router.put('/:id', validate.recivedName, validate.recivedQuantity, productsContr
 
 router.delete('/:id', productsControllers.exclude);
 
-router.delete('/:id', productsControllers.exclude);
-
 router.get('/:id', productsControllers.getById);
 
 module.exports = router;
