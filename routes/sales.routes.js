@@ -9,12 +9,12 @@ router.get('/', salesControllers.getAll);
 
 router.get('/:id', salesControllers.getById);
 
-router.post('/', validate.recievedProductsIds, validate.recievedQuantitys, salesControllers.add);
+router.post('/', validate.recievedProductsIds, validate.recievedQuantities, salesControllers.add);
 
 router.put(
   '/:id',
   validate.recievedProductsIds,
-  validate.recievedQuantitys,
+  validate.recievedQuantities,
   salesControllers.update,
 );
 

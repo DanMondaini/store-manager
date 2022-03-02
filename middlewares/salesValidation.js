@@ -9,7 +9,7 @@ const recievedProductsIds = (req, _res, next) => {
   next();
 };
 
-const recievedQuantitys = (req, _res, next) => {
+const recievedQuantities = (req, _res, next) => {
   const sales = req.body;
 
   sales.forEach((sale) => {
@@ -25,5 +25,5 @@ const recievedQuantitys = (req, _res, next) => {
 
 module.exports = {
   recievedProductsIds,
-  recievedQuantitys,
+  recievedQuantities,
 };
