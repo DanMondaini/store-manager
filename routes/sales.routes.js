@@ -1,7 +1,7 @@
 const express = require('express');
 
 const salesControllers = require('../controllers/salesControllers');
-const validate = require('../middlewares/salesValidadtion');
+const validate = require('../middlewares/salesValidation');
 
 const router = express.Router();
 
